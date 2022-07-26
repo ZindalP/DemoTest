@@ -2,15 +2,10 @@ name: CI-Test
 
 on: [push]
 
-env:
-  DAY_OF_WEEK: Monday
-  
 jobs:
-  test:
-    name: Test
+  file_existence:
     runs-on: macos-latest
     steps:
-      - name: Checkout
-        run: |
-          echo "DAY_OF_WEEK=Sunday" >> $GITHUB_ENV
-          echo "${{ env.DAY_OF_WEEK }}"
+      - name: Checkout code
+        run: echo ${GITHUB_HEAD_REF}
+
