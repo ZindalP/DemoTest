@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          echo "Sunday" >> $$DAY_OF_WEEK
+          echo "Sunday" >> $DAY_OF_WEEK
           echo "$DAY_OF_WEEK!"
