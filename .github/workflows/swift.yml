@@ -7,5 +7,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout code
-        run: ${GITHUB_REF#refs/*/}
+        run: echo "${GITHUB_REF#refs/*/}"
 
