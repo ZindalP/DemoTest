@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          echo "::set-env name=DAY_OF_WEEK::Sunday"
+          echo "NOW=v$('Sunday' +'%Y%m%d.%H%M%S')" >> $$DAY_OF_WEEK
           echo "$DAY_OF_WEEK!"
