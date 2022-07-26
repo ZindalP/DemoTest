@@ -6,5 +6,13 @@ jobs:
   file_existence:
     runs-on: macos-latest
     steps:
-      - name: Checkout code
-        run: echo "${GITHUB_REF#refs/*/}"
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "assets/${{ env.URL }}"
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: echo "It exists !"
+        
+    
