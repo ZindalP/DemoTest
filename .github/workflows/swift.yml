@@ -12,4 +12,5 @@ jobs:
     steps:
       - name: Checkout
         run: |
+          ::set-env name=DAY_OF_WEEK::Sunday
           echo "$DAY_OF_WEEK!"
